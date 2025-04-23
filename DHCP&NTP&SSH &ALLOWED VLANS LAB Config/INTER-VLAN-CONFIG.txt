@@ -1,0 +1,121 @@
+VLAN CONFIG
+-------------------------
+CONF T
+VLAn  4 
+NAme HR
+EXIT 
+VLAn  3
+NAme SALES
+EXIT 
+VLAn  2
+NAme IT
+EXIT
+VLAn  90
+NAme CISCOADMIN
+EXIT
+ 
+INT RANGE F0/1-4
+SWITCHPORT MODE ACCESS 
+SWITCHPORT ACCESS VLAN 4
+EXIT 
+
+INT RANGE F0/5-7
+SWITCHPORT MODE ACCESS 
+SWITCHPORT ACCESS VLAN 3
+EXIT 
+
+INT RANGE F0/8-11
+SWITCHPORT MODE ACCESS 
+SWITCHPORT ACCESS VLAN 2
+EXIT 
+
+interface range FastEthernet0/13, FastEthernet0/15
+ switchport mode access
+ switchport access vlan 90
+exit
+
+
+
+INTERVLAN ROUTING 
+--------------------------------
+
+Router>EN 
+Router#CONF T 
+Router(config)#HOStname  R1 
+R1(config)#INTERface  G0/0
+R1(config-if)#IP ADDress  192.168.7.1 255.255.255.240
+R1(config-if)#NO SHUtdown  
+R1(config-if)#EXIT 
+
+R1(config)#INTERface  G0/0.4
+R1(config-subif)#ENCapsulation DOt1Q 4
+R1(config-subif)#IP ADDress  192.168.7.49 255.255.255.240
+R1(config-subif)#EXIT 
+
+R1(config)#INTERface  G0/0.3
+R1(config-subif)#ENCapsulation DOt1Q 3
+R1(config-subif)#IP ADDress  192.168.7.33 255.255.255.240
+R1(config-subif)#EXIT 
+
+R1(config)#INTERface  G0/0.2
+R1(config-subif)#ENCapsulation DOt1Q 2
+R1(config-subif)#IP ADDress  192.168.7.17 255.255.255.240
+R1(config-subif)#EXIT 
+ 
+ interface GigabitEthernet0/0.90
+ encapsulation dot1Q 90
+ ip address 192.168.90.1 255.255.255.0
+ no shutdown
+exit
+
+
+NTP CONFIG
+---------------------
+R1#CONF T 
+R1(config)#NTP MASter
+-----------------------------------------
+SW3#CONF T 
+SW3(config)#NTP SERver 192.168.90.1
+ 
+ 
+ 
+DHCP CONFIG 
+------------------
+ ip dhcp pool HR
+ network 192.168.7.48 255.255.255.240
+ default-router 192.168.7.49
+ dns-server 8.8.8.8
+
+ip dhcp pool SALES
+ network 192.168.7.32 255.255.255.240
+ default-router 192.168.7.33
+ dns-server 8.8.8.8
+
+ip dhcp pool IT
+ network 192.168.7.16 255.255.255.240
+ default-router 192.168.7.17
+ dns-server 8.8.8.8
+
+ip dhcp pool DEFAULT
+ network 192.168.7.0 255.255.255.240
+ default-router 192.168.7.1
+ dns-server 8.8.8.8
+ 
+ SSH 
+--------------------------------
+1- LAYER 7 PROTOCOL 
+2- TCP PROTOCOL 
+3- USE PORT NO 22
+4- It is used to establish a remote connection to network devices in a secure and encrypted manner.
+---------------------------------------------------------------------
+R1# configure terminal
+R1(config)# ip domain-name STAR
+R1(config)# crypto key generate rsa
+The name for the keys will be: R1.STAR
+How many bits in the modulus [512]: 1024
+R1(config)# username ALI password AAA
+R1(config)# username BOB password BBB
+R1(config)# line vty 0 4
+R1(config-line)# login local
+R1(config-line)# transport input ssh
+R1(config-line)# exit
