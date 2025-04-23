@@ -1,0 +1,69 @@
+VLAN CONFIG
+-------------------------
+CONF T
+VLAn  4 
+NAme HR
+EXIT 
+VLAn  3
+NAme SALES
+EXIT 
+VLAn  2
+NAme IT
+EXIT
+VLAn  90
+NAme CISCOADMIN
+EXIT
+ 
+INT RANGE F0/1-4
+SWITCHPORT MODE ACCESS 
+SWITCHPORT ACCESS VLAN 4
+EXIT 
+
+INT RANGE F0/5-7
+SWITCHPORT MODE ACCESS 
+SWITCHPORT ACCESS VLAN 3
+EXIT 
+
+INT RANGE F0/8-11
+SWITCHPORT MODE ACCESS 
+SWITCHPORT ACCESS VLAN 2
+EXIT 
+
+interface range FastEthernet0/13, FastEthernet0/15
+ switchport mode access
+ switchport access vlan 90
+exit
+
+
+
+INTERVLAN ROUTING 
+--------------------------------
+
+Router>EN 
+Router#CONF T 
+Router(config)#HOStname  R1 
+R1(config)#INTERface  G0/0
+R1(config-if)#IP ADDress  192.168.7.1 255.255.255.240
+R1(config-if)#NO SHUtdown  
+R1(config-if)#EXIT 
+
+R1(config)#INTERface  G0/0.4
+R1(config-subif)#ENCapsulation DOt1Q 4
+R1(config-subif)#IP ADDress  192.168.7.49 255.255.255.240
+R1(config-subif)#EXIT 
+
+R1(config)#INTERface  G0/0.3
+R1(config-subif)#ENCapsulation DOt1Q 3
+R1(config-subif)#IP ADDress  192.168.7.33 255.255.255.240
+R1(config-subif)#EXIT 
+
+R1(config)#INTERface  G0/0.2
+R1(config-subif)#ENCapsulation DOt1Q 2
+R1(config-subif)#IP ADDress  192.168.7.17 255.255.255.240
+R1(config-subif)#EXIT 
+ 
+ interface GigabitEthernet0/0.90
+ encapsulation dot1Q 90
+ ip address 192.168.90.1 255.255.255.0
+ no shutdown
+exit
