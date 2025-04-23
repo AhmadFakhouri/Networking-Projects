@@ -8,4 +8,4 @@ This repository contains networking configurations, topologies, and documentatio
 
 
 1. Multi-VLAN networks with router-on-a-stick and centralized DHCP.  
-![Network Topology Diagram](Networking-Projects/image.png)
+![Network Topology Diagram](image.png)
