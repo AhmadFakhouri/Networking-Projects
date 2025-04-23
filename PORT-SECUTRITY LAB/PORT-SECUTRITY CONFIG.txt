@@ -1,0 +1,29 @@
+TO CONFIGURE PORT-SECURITY FOR ONE PORT 
+--------------------------------------------------------------------
+SW-2#CONF T 
+SW-2(config)#INTerface F0/5
+SW-2(config-if)#SWITCHPORT MODE ACCESS 
+SW-2(config-if)#SWITCHPORT PORT-SECURITY MAXimum 1
+SW-2(config-if)#SWITCHPORT PORT-SECURITY MAC-address 000a.f3ad.990a
+SW-2(config-if)#SWITCHPORT PORT-SECURITY 
+SW-2(config-if)#SWITCHPORT PORT-SECURITY VIOlation  SHutdown 
+
+TO CONFIGURE PORT SECURITY FOR A RANGE OF PORTS 
+---------------------------------------------------------------------------
+
+SW-1#CONF T 
+SW-1(config)#INTERface  RAnge  F0/1-20
+SW-1(config-if-range)#SWITCHPORT MODE ACCess  
+SW-1(config-if-range)#SWITCHPORT PORT-security MAXimum 2
+SW-1(config-if-range)#SWITCHPORT PORT-security  MAC-address STicky 
+SW-1(config-if-range)#SWITCHPORT PORT-security  
+SW-1(config-if-range)#SWITCHPORT PORT-security  VIolation REstrict	
+ 
+ 
+ SHOW COMMANDS 
+--------------------------------
+SW-2#SHOW RUN 
+SW-2#SHOW MAC ADdress-table
+SW-2#SHOW PORT-securit
+SW-2#SHOW PORT-security ADdress 
+SW-2#SHOW PORT-security INTERface F0/5
