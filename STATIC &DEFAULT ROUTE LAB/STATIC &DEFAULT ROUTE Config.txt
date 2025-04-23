@@ -1,0 +1,43 @@
+R1 BASIC CONFIG 
+------------------------------
+Router>EN 
+Router#CONF T 
+Router(config)#HOStname  R1-ALRIYADH
+R1-ALRIYADH(config)#INT G0/0
+R1-ALRIYADH(config-if)#IP ADDress  192.168.1.1 255.255.255.0
+R1-ALRIYADH(config-if)#NO SHUtdown  
+
+R1-ALRIYADH(config-if)#INT S0/0/0
+R1-ALRIYADH(config-if)#IP ADDress  10.1.1.1 255.255.255.252
+R1-ALRIYADH(config-if)#NO SHUtdown  
+R1-ALRIYADH(config-if)#CLOck  RAte  64000
+R1-ALRIYADH#WRite 
+
+R2 BASIC CONFIG 
+--------------------------------------------
+
+Router>EN 
+Router#CONF T 
+Router(config)#HOStname  R2-JEDDAH 
+R2-JEDDAH(config)#INT G0/0
+R2-JEDDAH(config-if)# IP ADD 192.168.2.1 255.255.255.0
+R2-JEDDAH(config-if)#NO SHutdown  
+R2-JEDDAH(config-if)#EXIT 
+R2-JEDDAH(config)#INT S0/0/1
+R2-JEDDAH(config-if)#IP ADDress  10.1.1.2  255.255.255.252
+R2-JEDDAH(config-if)#NO SHUtdown  
+R2-JEDDAH#WRite 
+
+
+static default route 
+---------------------------------
+R1-ALRIYADH(config)#ip route 0.0.0.0 0.0.0.0   9.9.9.2
+R1-ALRIYADH(config)#ip route 0.0.0.0 0.0.0.0   g0/1
+
+R1-ALRIYADH(config)#IP ROUTE 192.168.2.0 255.255.255.0 10.1.1.2
+R1-ALRIYADH(config)#IP ROUTE 192.168.2.0 255.255.255.0  S0/0/0
+
+R2-JEDDAH(config)#IP ROUTE 192.168.1.0 255.255.255.0 10.1.1.1
+R2-JEDDAH(config)#IP ROUTE 192.168.1.0 255.255.255.0  S0/0/1
+
+
