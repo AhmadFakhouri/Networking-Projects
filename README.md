@@ -64,7 +64,8 @@ A simulated enterprise network connecting two branch offices (**Riyadh** and **J
 ### 🔒 Private WAN Connection
 - **Network:** `10.1.1.0/30`  
 - **Purpose:** Connects Riyadh and Jeddah routers using **serial interfaces**
-  ![Network Topology Diagram](Static-Route.png)
+  ![Static and Default Route Lab](STATIC%20%26DEFAULT%20ROUTE%20LAB/Static-Route.png)
+
 
 
   # 🔐 Port Security Configuration Lab
