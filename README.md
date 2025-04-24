@@ -16,7 +16,7 @@ Description: A simulated enterprise network with VLAN segmentation (HR, Sales, I
 - DHCP server for automatic IP distribution.
 - topology
   
-  ![Network Topology Diagram](DHCP&NTP&SSH&VLAN.png)
+  ![Network Topology Diagram](DHCP&NTP&SSH& VLAN.png)
 
   ### Multi-Router OSPF Network
 
