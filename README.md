@@ -33,7 +33,7 @@ A simulated enterprise network designed to segment traffic into different depart
 - Enabled through trunk port between switch and router  
 - All VLANs communicate securely and efficiently through router subinterfaces
 
-  ![Network Topology Diagram](DHCP&NTP&SSH&VLAN.png)
+![Network Topology Diagram](DHCP%26NTP%26SSH%20%26ALLOWED%20VLANS%20LAB%20Config/DHCP%26NTP%26SSH%26VLAN.png)
 
   ### Multi-Router OSPF Network
 
