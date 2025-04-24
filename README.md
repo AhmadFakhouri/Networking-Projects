@@ -16,7 +16,7 @@ Description: A simulated enterprise network with VLAN segmentation (HR, Sales, I
 - DHCP server for automatic IP distribution.
 - topology
   
-  ![Network Topology Diagram](DHCP&NTP&SSH& VLAN.png)
+  ![Network Topology Diagram](DHCP&NTP&SSH&VLAN.png)
 
   ### Multi-Router OSPF Network
 
@@ -29,3 +29,4 @@ An OSPF-configured network enabling seamless communication between multiple site
   - **ACL Security:** Restricts unauthorized traffic (e.g., blocking FTP access from specific hosts). Blocks traffic from restricted hosts (e.g., 172.16.1.2 to 172.16.2.5).
   - **Inter-Site Connectivity:** Reliable communication between Riyadh and Jeddah via serial links.
   - **Topology**
+      ![Network Topology Diagram](ACL-OSPF.png)
