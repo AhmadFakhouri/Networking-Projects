@@ -63,6 +63,7 @@ A simulated enterprise network connecting two branch offices (**Riyadh** and **J
 ### 🔒 Private WAN Connection
 - **Network:** `10.1.1.0/30`  
 - **Purpose:** Connects Riyadh and Jeddah routers using **serial interfaces**
+  ![Network Topology Diagram](Static-Route.png)
 
 
   # 🔐 Port Security Configuration Lab
@@ -82,6 +83,7 @@ This lab demonstrates how to secure switch ports using **Port Security** on Cisc
   - Max MAC: 1  
   - Static MAC Address: `000a.f3ad.990a`  
   - Violation Mode: Shutdown
+    ![Network Topology Diagram](Port-security.png)
 
 
 
