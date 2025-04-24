@@ -46,7 +46,8 @@ An OSPF-configured network enabling seamless communication between multiple site
   - **ACL Security:** Restricts unauthorized traffic (e.g., blocking FTP access from specific hosts). Blocks traffic from restricted hosts (e.g., 172.16.1.2 to 172.16.2.5).
   - **Inter-Site Connectivity:** Reliable communication between Riyadh and Jeddah via serial links.
   - **Topology**
-      ![Network Topology Diagram](ACL-OSPF.png)
+      ![ACL OSPF Topology](Networking-Projects/ACL%20Topology%26%20Config/ACL-OSPF.png)
+
     # 🏢 Dual-Branch Enterprise Network with Static Routing and Internet Access
 
 ## 📄 Description
