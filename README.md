@@ -86,7 +86,7 @@ This lab demonstrates how to secure switch ports using **Port Security** on Cisc
   - Static MAC Address 
   - Violation Mode: Shutdown
 
-    ![Network Topology Diagram](Port-Security.png)
+    ![Port Security Lab](PORT-SECUTRITY%20LAB/Port-Security.png)
 
 
 
