@@ -6,17 +6,33 @@ This repository contains networking configurations, topologies, and documentatio
 3. Static routing for WAN connectivity between sites.  
 4. Port security configurations to enhance network security.
 
-# Project Overview
-### Multi-VLAN networks with router-on-a-stick and centralized DHCP.
+# Projects Overview
+Multi-VLAN Network with Router-on-a-Stick and Centralized DHCP
 
 ## 📄 Description
-A simulated enterprise network with VLAN segmentation (HR, Sales, IT) and a router-on-a-stick for inter-VLAN routing. Includes a centralized DHCP server for dynamic IP assignment. 
+A simulated enterprise network designed to segment traffic into different departments using VLANs. Implements **Router-on-a-Stick** for inter-VLAN routing and uses a **centralized DHCP server** for dynamic IP address assignment to end devices.
+
+---
+
 ## 📋 Details
-- VLANs for HR, Sales, and IT departments.
-- Subinterfaces on the router for VLAN routing.
-- DHCP server for automatic IP distribution.
-- topology
-  
+
+### 🧱 VLAN Structure
+- 👥 **HR Department** – VLAN 10  
+- 💼 **Sales Department** – VLAN 20  
+- 🖥️ **IT Department** – VLAN 30
+- 🖥️ **CiscoAdmin**    – VLAN 90
+### 🚦 Router-on-a-Stick
+- Configured subinterfaces on the router (`G0/1.10`, `G0/1.20`, `G0/1.30`)
+- Each subinterface corresponds to a VLAN and handles routing between them
+
+### 🖧 Centralized DHCP Server
+- Allocates IP addresses dynamically to all VLANs  
+- Ensures simplified and centralized IP management  
+
+### 🔀 Inter-VLAN Routing
+- Enabled through trunk port between switch and router  
+- All VLANs communicate securely and efficiently through router subinterfaces
+
   ![Network Topology Diagram](DHCP&NTP&SSH&VLAN.png)
 
   ### Multi-Router OSPF Network
