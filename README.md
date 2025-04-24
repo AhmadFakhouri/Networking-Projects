@@ -22,7 +22,7 @@ A simulated enterprise network designed to segment traffic into different depart
 - 🖥️ **IT Department** – VLAN 30
 - 🖥️ **CiscoAdmin**    – VLAN 90
 ### 🚦 Router-on-a-Stick
-- Configured subinterfaces on the router (`G0/1.10`, `G0/1.20`, `G0/1.30`)
+- Configured subinterfaces on the router (`G0/1.10`, `G0/1.20`, `G0/1.30`, `G0/1.90`)
 - Each subinterface corresponds to a VLAN and handles routing between them
 
 ### 🖧 Centralized DHCP Server
@@ -63,6 +63,25 @@ A simulated enterprise network connecting two branch offices (**Riyadh** and **J
 ### 🔒 Private WAN Connection
 - **Network:** `10.1.1.0/30`  
 - **Purpose:** Connects Riyadh and Jeddah routers using **serial interfaces**
+
+
+  # 🔐 Port Security Configuration Lab
+
+## 📄 Description  
+This lab demonstrates how to secure switch ports using **Port Security** on Cisco switches. It includes configurations for a **single port** and a **range of ports**, with command verification using standard show commands.
+
+---
+
+## 📋 Details
+
+### 🧪 Port Security on a Single Port  
+- 🔌 **Switch**: SW-2  
+- 🎯 **Port**: FastEthernet 0/5  
+- 🛡️ **Security Settings**:
+  - Mode: Access  
+  - Max MAC: 1  
+  - Static MAC Address: `000a.f3ad.990a`  
+  - Violation Mode: Shutdown
 
 
 
