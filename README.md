@@ -18,15 +18,14 @@ Description: A simulated enterprise network with VLAN segmentation (HR, Sales, I
   
   ![Network Topology Diagram](image.png)
 
-  2. Multi-Router OSPF Network
-Description
+  ### Multi-Router OSPF Network
+
+**Description:**  
 An OSPF-configured network enabling seamless communication between multiple sites (Riyadh and Jeddah) with FTP/Web services and ACL-based security.
 
-Key Features
-OSPF Routing : Dynamic path selection between sites using OSPF Area 0.
-FTP/Web Services : Dedicated servers for file transfers and web access.
-ACL Security :
-Restricts unauthorized traffic (e.g., blocking FTP access from specific hosts).
-Blocks traffic from restricted hosts (e.g., 172.16.1.2 to 172.16.2.5).
-Inter-Site Connectivity : Reliable communication between Riyadh and Jeddah via serial links.
-Topology
+- **Key Features:**
+  - **OSPF Routing:** Dynamic path selection between sites using OSPF Area 0.
+  - **FTP/Web Services:** Dedicated servers for file transfers and web access.
+  - **ACL Security:** Restricts unauthorized traffic (e.g., blocking FTP access from specific hosts). Blocks traffic from restricted hosts (e.g., 172.16.1.2 to 172.16.2.5).
+  - **Inter-Site Connectivity:** Reliable communication between Riyadh and Jeddah via serial links.
+  - **Topology**
