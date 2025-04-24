@@ -81,7 +81,7 @@ This lab demonstrates how to secure switch ports using **Port Security** on Cisc
 - 🛡️ **Security Settings**:
   - Mode: Access  
   - Max MAC: 1  
-  - Static MAC Address: `000a.f3ad.990a`  
+  - Static MAC Address 
   - Violation Mode: Shutdown
 
     ![Network Topology Diagram](Port-Security.png)
